@@ -1,5 +1,6 @@
 angular.module('app01').controller("ListaTareaController",
-	['$scope','$location','TareaDao',function($scope,$location,tareaDao){
+	['$scope','$state','TareaDao',function($scope,$state,tareaDao){
+		console.log(tareaDao);
 		$scope.tituloLista = "Lista de tareas";		
 		//$scope.listaTareas =tareaDao.buscarTodos();
 		tareaDao.buscarTodos().then(
@@ -12,12 +13,14 @@ angular.module('app01').controller("ListaTareaController",
 				}
 			);	
 		$scope.editarTarea = function(id){
-			$location.path("/tarea/"+id);
+			console.log(id);
+
+			$state.go('tarea',{idTarea:id});
 		};
 
 		// funcion que guarda una tarea
 		$scope.nuevaTarea = function(){
-			$location.path("/tarea");
+			$state.go('tarea',{idTarea:0});
 		};
 
 		// funcion que borra una tarea
@@ -25,7 +28,7 @@ angular.module('app01').controller("ListaTareaController",
 			//tareaDao.borrarTarea(tarea);			
 			//$scope.listaTareas = tareaDao.buscarTodos();
 			// cambio cuando uso REST)
-
+			console.log(tareaDao);
 			tareaDao.borrarTarea(tarea).then(
 				function(d){
 					console.log(d);

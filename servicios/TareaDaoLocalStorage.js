@@ -59,7 +59,9 @@ angular.module('app01LocStoService',[]).factory('TareaDao',
 			$timeout(
 				function(){ 
 				for(var i =1; i<= lastId ; i++) {
+					console.log($window);
 					var elemento = $window.localStorage.getItem(nombreTabla+":"+i);
+					console.log(elemento+ "  "+nombreTabla + " "+i);
 					var aux = angular.fromJson(elemento);
 					aux.fechaFin= new Date(aux.fechaFin);
 					if(elemento) listaResultado.push(aux);

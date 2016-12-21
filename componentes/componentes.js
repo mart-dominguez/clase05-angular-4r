@@ -9,10 +9,11 @@ angular.module('app01')
         controller: ['TareaDao',function(tareaDao){
             this.$onInit = function () {
                 console.log(this);
-                this.habilitado=false;
+                this.habilitado=(this.tarea.id>0);
+                console.log(this.habilitado);
             };
                 this.agregarTarea = function(){
-                    if(tarea.tareaId>0){
+                    if(this.tarea.id>0){
                         tareaDao.actualizarTarea(this.tarea);   
                     }else{
                         tareaDao.guardarTarea(this.tarea);  

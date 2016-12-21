@@ -10,9 +10,9 @@ angular.module('app01',['ui.router','oc.lazyLoad','ui.bootstrap','app01LocStoSer
     url: '/listaTarea',
     templateUrl: 'vistas/listaTarea.html',
     controller: 'ListaTareaController',
-    resolve: { 
+    resolve: {       
       ListaTareaController: ['$ocLazyLoad', function($ocLazyLoad) {
-             return $ocLazyLoad.load('controller/ListaTareaController.js');
+        return $ocLazyLoad.load('controller/ListaTareaController.js');
       }]
     }
   }
@@ -21,11 +21,7 @@ angular.module('app01',['ui.router','oc.lazyLoad','ui.bootstrap','app01LocStoSer
     url: '/tarea/{idTarea}',
     templateUrl: 'vistas/altaTarea.html',
     controller: 'TareaController',
-    data : {tareaId: 'tareaActual'},
     resolve: { 
-        tareaActual: function( $transition$){
-           return  $transition$.params().idTarea;
-        },
       TareaController: ['$ocLazyLoad', function($ocLazyLoad) {
         return $ocLazyLoad.load('controller/TareaController.js');
       }],
