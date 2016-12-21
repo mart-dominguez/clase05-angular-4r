@@ -1,4 +1,4 @@
-angular.module('appTestUI',['ui.router'])
+angular.module('appTestUI',['ui.router','oc.lazyLoad'])
     .component('mioferta', {
   template:  '<h3>{{$ctrl.oferta}} Compra hoy en 18 cuotas!</h3>' +
                 '<p ng-show="$ctrl.verPrecio">a solo {{$ctrl.precio}}</p> '+

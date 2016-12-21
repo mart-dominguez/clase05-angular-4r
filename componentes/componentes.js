@@ -6,14 +6,13 @@ angular.module('app01')
             habilitado:'<',
             prioridades:'<'
         },
-        controller: ['TareaDao','$routeParams',function(tareaDao,$routeParams){
+        controller: ['TareaDao',function(tareaDao){
             this.$onInit = function () {
                 console.log(this);
                 this.habilitado=false;
-                this.tarea={};
             };
                 this.agregarTarea = function(){
-                    if($routeParams.tareaId>0){
+                    if(tarea.tareaId>0){
                         tareaDao.actualizarTarea(this.tarea);   
                     }else{
                         tareaDao.guardarTarea(this.tarea);  

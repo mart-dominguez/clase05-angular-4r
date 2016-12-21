@@ -1,9 +1,10 @@
 angular.module('app01').controller("TareaController",
-	['$scope','$routeParams','TareaDao',function($scope,$routeParams,tareaDao){
+	['$scope','TareaDao','$state', '$stateParams',function($scope,tareaDao,$state, $stateParams){
 		$scope.tituloAlta = "Alta de tareas";
-		console.log($routeParams.tareaId);
+		console.log($state.current.data);
+		console.log($stateParams);
 		
-		if($routeParams.tareaId>0){
+		if($state.current.data.tareaId>0){
 			/*$scope.tareaActual = $scope.listaTareas.find(function(unaTarea){
 				console.log(unaTarea.id);
 				console.log($routeParams.taereaId);				

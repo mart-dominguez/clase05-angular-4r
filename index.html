@@ -4,34 +4,70 @@
 <base href="/">
 <meta charset="utf-8">
 <title></title>
-<link rel="stylesheet" href="estilos/custom.css">
+<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+<link href="estilos/dashboard.css" rel="stylesheet">
 </head>
 <body ng-controller="AppController">
-<header>
-	<h1>{{::tituloApp}}</h1>		
-</header>
-<menu>
-	<item-menu ng-repeat="item in menu" texto="item.opcion" es-activo="item.activo" fx="item.operacion()">
-	</item-menu>	
-</menu>
 
-<div class="contenedor">
-	<ng-view></ng-view>
-</div>
-<strong>{{miContador}}</strong>
-<counter count="miContador"></counter>
-<ng-include src="'vistas/footer.html'"></ng-include>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="container-fluid">
+      <div class="row">
+		<div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a ui-sref="home"  ui-sref-active="active">Home <span class="sr-only">(current)</span></a></li>
+            <li><a ui-sref="listaTarea"  ui-sref-active="active">Lista</a></li>
+            <li><a ui-sref="tarea({ idTarea: 0 })"  ui-sref-active="active">tarea</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="">Nav item</a></li>
+            <li><a href="">Nav item again</a></li>
+            <li><a href="">One more nav</a></li>
+            <li><a href="">Another nav item</a></li>
+            <li><a href="">More navigation</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="">Nav item again</a></li>
+            <li><a href="">One more nav</a></li>
+            <li><a href="">Another nav item</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          	<h1 class="page-header">Bienvenido</h1>
+          	<ui-view>
+  			</ui-view>
+		</div>
+      </div>
+    </div>
+
 <script type="text/javascript" src="node_modules/angular/angular.js"></script>	
-<script type="text/javascript" src="node_modules/angular-route/angular-route.js"></script>
+<script type="text/javascript" src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+<script type="text/javascript" src="node_modules/oclazyload/dist/ocLazyLoad.js"></script>
+<script type="text/javascript" src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
 <script type="text/javascript" src="servicios/TareaDaoMemory.js"></script>
 <script type="text/javascript" src="servicios/TareaDaoLocalStorage.js"></script>
 <script type="text/javascript" src="servicios/TareaDaoRest.js"></script>
-<script type="text/javascript" src="app.js"></script>	
+<script type="text/javascript" src="app05.js"></script>	
 <script type="text/javascript" src="controller/AppController.js"></script>
-<script type="text/javascript" src="controller/ListaTareaController.js"></script>
-<script type="text/javascript" src="controller/TareaController.js"></script>
 <script type="text/javascript" src="directives/directivas.js"></script>
-<script type="text/javascript" src="componentes/componentes.js"></script>
 </body>
 </html>
 
