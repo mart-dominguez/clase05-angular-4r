@@ -1,0 +1,17 @@
+<div  class="bloqueLista">
+	<h2>{{tituloLista}}</h2>
+	<h3 ng-show="listaTareas.length==0">No hay tareas creadas</h3>
+	<ul ng-hide="listaTareas.length==0">
+		<li ng-repeat="unaTarea in listaTareas track by $index">
+			<span >{{unaTarea.titulo}} </span>
+			<span ng-class="[{'textoRojo':unaTarea.horas%2==0},'tareaDestacada']">{{unaTarea.horas}} </span>
+			<span>{{unaTarea.fechaFin}} </span>
+			<span>{{unaTarea.prioridad.titulo}} </span>
+			<span><button type="button" ng-click="borrarTarea(unaTarea)">borrar</button></span>
+			<span><button type="button" ng-click="editarTarea(unaTarea.id)">Editar</button></span>
+		</li>
+	</ul>
+	<p>
+	<button ng-click="nuevaTarea()">Nueva tarea</button>
+	</p>
+</div>

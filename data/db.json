@@ -1,0 +1,32 @@
+{
+  "tareas": [
+    {
+      "fechaFin": "2016-11-29T20:30:23.337Z",
+      "titulo": "Hola",
+      "horas": 234,
+      "prioridad": {
+        "id": 1,
+        "titulo": "Urgente"
+      },
+      "id": "1"
+    }
+  ],
+  "prioridades": [
+    {
+      "id": 1,
+      "titulo": "Urgente"
+    },
+    {
+      "id": 2,
+      "titulo": "Alta"
+    },
+    {
+      "id": 3,
+      "titulo": "Media"
+    },
+    {
+      "id": 4,
+      "titulo": "Baja"
+    }
+  ]
+}

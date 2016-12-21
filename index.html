@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app01">
+<head>
+<base href="/">
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" href="estilos/custom.css">
+</head>
+<body ng-controller="AppController">
+<header>
+	<h1>{{::tituloApp}}</h1>		
+</header>
+<menu>
+	<item-menu ng-repeat="item in menu" texto="item.opcion" es-activo="item.activo" fx="item.operacion()">
+	</item-menu>	
+</menu>
+
+<div class="contenedor">
+	<ng-view></ng-view>
+</div>
+<strong>{{miContador}}</strong>
+<counter count="miContador"></counter>
+<ng-include src="'vistas/footer.html'"></ng-include>
+<script type="text/javascript" src="node_modules/angular/angular.js"></script>	
+<script type="text/javascript" src="node_modules/angular-route/angular-route.js"></script>
+<script type="text/javascript" src="servicios/TareaDaoMemory.js"></script>
+<script type="text/javascript" src="servicios/TareaDaoLocalStorage.js"></script>
+<script type="text/javascript" src="servicios/TareaDaoRest.js"></script>
+<script type="text/javascript" src="app.js"></script>	
+<script type="text/javascript" src="controller/AppController.js"></script>
+<script type="text/javascript" src="controller/ListaTareaController.js"></script>
+<script type="text/javascript" src="controller/TareaController.js"></script>
+<script type="text/javascript" src="directives/directivas.js"></script>
+<script type="text/javascript" src="componentes/componentes.js"></script>
+</body>
+</html>
+

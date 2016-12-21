@@ -1,0 +1,13 @@
+<div  class="bloqueFormulario">
+	<h2>{{$ctrl.tituloAlta}}</h2>
+	<myinput etiqueta="Titulo" tipo="text" valor="$ctrl.tarea.titulo" campo="titulo" on-update="$ctrl.updateTarea(campo,valor)"></myinput>
+	<myinput etiqueta="Horas" tipo="number" valor="$ctrl.tarea.horas"></myinput>
+	<myinput etiqueta="Fecha Fin" tipo="date" valor="$ctrl.tarea.fechaFin"></myinput>
+	<span>Prioridad:
+		<select ng-options="unaPrioridad as unaPrioridad.titulo for unaPrioridad in $ctrl.prioridades track by unaPrioridad.id" ng-model="$ctrl.tarea.prioridad" ng-value="$ctrl.prioridades[0]"></select>
+	</span>
+	<span>
+		<button type="button" ng-click="$ctrl.nuevaTarea()">Nueva</button>
+		<button type="button" ng-click="$ctrl.agregarTarea()" ng-disabled="!$ctrl.habilitado">Guardar</button>
+	</span>
+</div>

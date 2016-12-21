@@ -1,0 +1,43 @@
+.body{
+	margin: 0px;
+}
+.contenedor{
+	width:100%;
+}
+.bloqueFormulario{
+	width:40%;
+	background-color:#f2f2f2;
+	display:inline;
+	float:left;
+}
+.bloqueLista{
+	width:60%;
+	background-color:#c4c4c4;
+	float:left;
+}
+.bloqueFormulario  span {
+	display: block;
+}
+
+input{
+	padding: 3px;
+	margin: 2px;
+	color: blue;
+}
+
+ul > li {
+    margin-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: solid 1px;
+    color: Navy;
+}
+
+.tareaDestacada{
+    font-family: Arial, Helvetica, sans-serif;
+	font-style: italic;
+    font-weight: bold;	
+}
+
+.textoRojo{
+	color:red;
+}

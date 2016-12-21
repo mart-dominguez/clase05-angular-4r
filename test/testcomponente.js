@@ -1,0 +1,1 @@
+testcomponente.js
